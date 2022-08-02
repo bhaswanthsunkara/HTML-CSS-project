@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="Style.css">
+    <title>Registration Form</title>
+    <script>
+        alert('Please fill the form correctly');
+    </script>
+    <script>
+        function SubForm (){
+            $.ajax({
+                url:'https://api.apispreadsheets.com/data/SJjzDGb10brLAwSU/?query=select*fromSJjzDGb10brLAwSUwherefirst name=''&count',
+                headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"}
+                type:'post',
+                data:$("#myForm").serializeArray(),
+                success: function(){
+                  alert("Form Data Submitted :)")
+                },
+                error: function(){
+                  alert("There was an error :(")
+                }
+            });
+        }
+        </script>
+</head>
+<body>
+    <div id="heading">
+        <h1 id="title">CONTACT FORM</h1>
+        <p id="description"></p>
+        </div>
+        <div id="main">
+            <form id="Registration-form">
+            <div id="input-fields">
+                <label id="name-label"><b>First Name:</b></label><br><br>
+                <input id="name" type="name" name="first name" class="form" required placeholder="Full Name"><br>
+                <br>
+                <label for="name-label"><b>Last Name:</b></label><br><br>
+                <input id="name" type="name" name="last name" class="form" required placeholder="Last Name"><br>
+                <br>
+                <label id="number-label"><b>Age:</b></label><br><br>
+    
+                <input id="date" type="date" name="date" class="form" min="5" max="99" placeholder="">
+                <br><br>
+                <label id="email-label"><b>Email:</b></label><br><br>
+                <input id="email" type="email" name="email" class="form" required placeholder="example@mail.com"><br>
+                <br>
+                    
+                <label><b>Gender:</b></label><br><br>
+                <input type="radio" name="gender" value="Male">Male <br>
+                <input type="radio" name="gender" value="Female">Female <br>
+                <input type="radio" name="gender" value="Other">Other <br>
+                <input type="radio" name="gender" value="Prefered not to say">Prefered not to say <br>
+             </div>
+             <div id="dropdown-div"><br>
+                <label id="dropdown-label"><strong>Programming language you are expert at: </strong></label><br><br>
+                <select id="dropdown" name="code-lang" class="form">
+                  <option value="Select">Select</option>
+                    <option value="Html">Html</option>
+                    <option value="Css">css</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                </select>
+             </div>
+             <div id="button-area">
+                 <br>
+                <label id="job-label"><b>Employment Status:</b></label><br><br>
+                <input type="radio" class="radio-inline" name="gender" value="employed" checked> Full-time job holder.(Employed)<br>
+                <input type="radio" class="radio-inline" name="gender" value="freelancer"> Part-time job holder.(Freelancer)<br>
+                <input type="radio" class="radio-inline" name="gender" value="applier"> Looking for a job.(Applier)<br>
+                <input type="radio" class="radio-inline" name="gender" value="unemployed"> I am a student.(Unemployed)
+              </div>
+              
+    
+              <div id="dropdown"><br><br>
+                <label id="dropdown-label"><strong>Programming language you want to Learn: </strong></label><br><br>
+                <select id="dropdown" name="code-lang" class="form"><br><br>
+                    <option value="Html">Html</option>
+                    <option value="Css">css</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="Go">Go (Programming Language)</option>
+                    <option value="C++">C++</option>
+                    <option value="Django">Django</option>
+                </select>
+             </div>
+    
+              <div id="ending"><br><br>
+                <label id="comments-label"><b>Do you have any suggestion about this survey ?</b></label><br><br>
+                <textarea style= height:120px;" class="form" placeholder="Write Something....."></textarea><br><br>
+                <input id="submit" type="submit"  class="Click to submit "onclick="alert('Successfully registered! You will receive the contact details through mail.')"></button>         
+        </div>
+        
+</body>
+
+</html>
